@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<androidx.preference.PreferenceScreen
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+	<androidx.preference.PreferenceCategory
+		app:iconSpaceReserved="false"
+		android:key="general"
+		android:title ="@string/generalCategoryTitle">
+		
+		<com.companyname.NavigationGraph6.ColorThemeListPreference
+			app:iconSpaceReserved="false"
+			android:key="colorThemeValue"
+			android:defaultValue="1"
+			android:title ="@string/colorThemeListPreferenceTitle"
+			android:dialogTitle ="@string/colorThemeListPreferenceDialogTitle"
+			android:summary ="@string/colorThemeListPreferenceSummary"/>
+		
+		<com.companyname.NavigationGraph6.SystemThemeListPreference
+			app:iconSpaceReserved="false"
+			android:key="systemThemeValue"
+			android:defaultValue="1"
+			android:title ="@string/systemThemeListPreferenceTitle"
+			android:dialogTitle ="@string/systemThemeListPreferenceDialogTitle"
+			android:summary ="@string/systemThemeListPreferenceSummary"/>
+
+		<androidx.preference.CheckBoxPreference
+			app:iconSpaceReserved="false"
+			android:defaultValue="false"
+			android:key="darkTheme"
+			android:summary="@string/use_dark_theme_summary"
+			android:title="@string/use_dark_theme" />
+
+		<androidx.preference.CheckBoxPreference
+			app:iconSpaceReserved="false"
+			android:defaultValue ="false"
+			android:key ="use_animations"
+			android:title ="@string/use_animations"
+			android:summary ="@string/use_animations_summary"/>
+
+		<androidx.preference.CheckBoxPreference
+			app:iconSpaceReserved="false"
+			android:defaultValue ="false"
+			android:key ="devicesWithNotchesAllowFullScreen"
+			android:summary ="@string/devicesWithNotchesAllowFullscreenSummary"
+			android:title ="@string/devicesWithNotchesAllowFullscreen"/>
+
+	</androidx.preference.PreferenceCategory>
+
+</androidx.preference.PreferenceScreen>

@@ -1,0 +1,157 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+	
+	<!--RED BMW THEME-->
+
+	<style name="Theme.NavigationGraph.RedBmw" parent="Theme.NavigationGraph.RedBmw.Base">
+
+		<!--Vehicle Image-->
+		<item name="vehicle_image">@drawable/bmw5</item>
+
+		<!--AlertDialogRoundedCornersTheme style-->
+		<item name="materialAlertDialogTheme">@style/AlertDialogRoundedCornersTheme</item>
+
+	</style>
+
+	<!-- Dark theme. -->
+	<style name="Theme.NavigationGraph.RedBmw.Base" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+
+		<item name="windowActionBar">false</item>
+		<item name="windowNoTitle">true</item>
+
+		<item name="colorPrimary">@color/red_200</item>
+		<item name="colorPrimaryVariant">@color/red_200_dark</item>
+		<item name="colorOnPrimary">@color/black</item>
+
+		<!-- headings in Preferences and checkboxes etc.-->
+		<item name="colorSecondary">@color/red_200_light</item>
+		<item name="colorOnSecondary">@color/black</item>
+
+		<item name="colorSurface">@color/transparent_black</item>
+		<item name="colorOnSurface">@color/white</item>
+
+		<item name="colorError">@color/error_dark</item>
+		<item name="colorOnError">@color/black</item>
+
+		<item name="colorOnBackground">@color/white</item>
+		<item name ="colorPagerIndicator">@color/white</item>
+		<item name="android:colorBackground">@color/black</item>
+		
+		<!-- Status bar color. -->
+		<!-- Gmail does this -->
+		<item name="android:statusBarColor" tools:targetApi="l">@color/black</item>
+		
+		<!-- NavigationBar-->
+		<item name="android:windowLightNavigationBar">false</item>
+		<!--Navigation Bar color-->
+		<item name="android:navigationBarColor">#80000000</item>
+		
+	</style>
+	
+	<!--END OF RED BMW theme-->
+
+	<!--BLUE AUDI THEME-->
+
+	<style name="Theme.NavigationGraph.BlueAudi" parent="Theme.NavigationGraph.BlueAudi.Base">
+
+		<!--Vehicle Image-->
+		<item name="vehicle_image">@drawable/audi_blue</item>
+		
+		<!--AlertDialogRoundedCornersTheme style-->
+		<item name="materialAlertDialogTheme">@style/AlertDialogRoundedCornersTheme</item>
+
+	</style>
+
+	<style name="Theme.NavigationGraph.BlueAudi.Base" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+
+		<item name="windowActionBar">false</item>
+		<item name="windowNoTitle">true</item>
+
+		<item name="colorPrimary">@color/blue_200</item>
+		<item name="colorPrimaryVariant">@color/blue_200_dark</item>
+		<item name="colorOnPrimary">@color/black</item>
+
+		<!-- headings in Preferences and checkboxes etc.-->
+		<item name="colorSecondary">@color/blue_200_light</item>
+		<item name="colorOnSecondary">@color/black</item>
+
+		<item name="colorSurface">@color/transparent_black</item>
+		<item name="colorOnSurface">@color/white</item>
+
+		<item name="colorError">@color/error_dark</item>
+		<item name="colorOnError">@color/black</item>
+
+		<item name="colorOnBackground">@color/white</item>
+		<item name ="colorPagerIndicator">@color/white</item>
+		<item name="android:colorBackground">@color/black</item>
+
+		<!-- Status bar color. -->
+		<!-- Gmail does this -->
+		<item name="android:statusBarColor" tools:targetApi="l">@color/black</item>
+		
+		<!-- NavigationBar-->
+		<item name="android:windowLightNavigationBar">false</item>
+		<!--Navigation Bar color-->
+		<item name="android:navigationBarColor">#80000000</item>
+
+	</style>
+
+	<!--END OF BLUE AUDI THEME-->
+
+
+	<!--GREEN BMW THEME-->
+
+	<style name="Theme.NavigationGraph.GreenBmw" parent="Theme.NavigationGraph.GreenBmw.Base">
+
+		<!--Vehicle Image-->
+		<item name="vehicle_image">@drawable/green_vehicle1</item>
+		
+		<!--AlertDialogRoundedCornersTheme style-->
+		<item name="materialAlertDialogTheme">@style/AlertDialogRoundedCornersTheme</item>
+
+	</style>
+
+	<!-- Dark theme. -->
+	<style name="Theme.NavigationGraph.GreenBmw.Base" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+
+		<item name="windowActionBar">false</item>
+		<item name="windowNoTitle">true</item>
+
+		<item name="colorPrimary">@color/green_200</item>
+		<item name="colorPrimaryVariant">@color/green_200_dark</item>
+		<item name="colorOnPrimary">@color/black</item>
+
+		<!-- headings in Preferences and checkboxes etc.-->
+		<item name="colorSecondary">@color/green_200_light</item>
+		<item name="colorOnSecondary">@color/black</item>
+
+		<item name="colorSurface">@color/transparent_black</item>
+		<item name="colorOnSurface">@color/white</item>
+
+		<item name="colorError">@color/error_dark</item>
+		<item name="colorOnError">@color/black</item>
+
+		<item name="colorOnBackground">@color/white</item>
+		<item name ="colorPagerIndicator">@color/white</item>
+		<item name="android:colorBackground">@color/black</item>
+
+		<!-- Status bar color. -->
+		<!-- Gmail does this -->
+		<item name="android:statusBarColor" tools:targetApi="l">@color/black</item>
+		
+		<!-- NavigationBar-->
+		<item name="android:windowLightNavigationBar">false</item>
+		<!--Navigation Bar color-->
+		<item name="android:navigationBarColor">#80000000</item>
+
+	</style>
+
+	<!--END OF GREEN BMW THEME theme-->
+	
+	
+	<style name="Theme.NavigationGraph.AppBarOverlay" parent="ThemeOverlay.MaterialComponents.Dark.ActionBar" />
+	<style name="Theme.NavigationGraph.PopupOverlay" parent="ThemeOverlay.MaterialComponents.Dark" />
+
+	
+
+</resources>

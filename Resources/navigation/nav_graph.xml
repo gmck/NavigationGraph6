@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@+id/home_fragment">
+
+    <fragment
+        android:id="@+id/home_fragment"
+        android:name="com.companyname.navigationgraph6.fragments.HomeFragment"
+        android:label="@string/menu_home"
+        tools:layout="@layout/fragment_home" />
+	
+	<fragment
+        android:id="@+id/gallery_fragment"
+        android:name="com.companyname.navigationgraph6.fragments.GalleryFragment"
+        android:label="@string/menu_gallery"
+        tools:layout="@layout/fragment_gallery" />
+
+    <fragment
+        android:id="@+id/slideshow_fragment"
+        android:name="com.companyname.navigationgraph6.fragments.SlideshowFragment"
+		android:label="@string/menu_slideshow"
+        tools:layout="@layout/fragment_slideshow" />
+
+	<!--not a top destination-->
+	<fragment
+		android:id="@+id/settingsFragment"
+		android:name="com.companyname.navigationgraph6.fragments.SettingsFragment"
+		android:label="Settings"/>
+
+	<!--not a top destination-->
+	<fragment
+		android:id="@+id/holding_fragment"
+		android:name="com.companyname.navigationgraph6.fragments.HoldingFragment"
+		android:label="Leaderboard"
+        tools:layout="@layout/fragment_holder_viewpager"/>
+	
+	<!--not a top destination-->
+	<fragment
+		android:id="@+id/register_fragment"
+		android:name="com.companyname.navigationgraph6.fragments.RegisterFragment"
+		android:label="Register"
+        tools:layout="@layout/fragment_register"/>
+
+</navigation>
+

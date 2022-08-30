@@ -1,0 +1,60 @@
+<resources>
+    <string name="app_name">NavigationGraph6</string>
+	<string name="navigation_header_title">Android Navigator</string>
+	<string name="navigation_header_sub_title">How to navigate</string>
+	<string name="action_subscription_info">Subscription Information</string>
+	<string name="action_settings">Settings</string>
+	
+	<string name="menu_home">Home</string>
+	<string name="menu_gallery">Gallery</string>
+	<string name="menu_slideshow">Slideshow</string>
+	
+	<string name="title_register">Register</string>
+	<string name="title_leaderboard">Leaderboard</string>
+	
+	<!--Preferences.xml-->
+	<string name ="generalCategoryTitle">General</string>
+	
+	<string name="use_dark_theme">Dark Theme</string>
+	<string name="use_dark_theme_summary">For older devices running less than Android 10 - Check to use Dark Theme.</string>
+
+	<!--<string name="use_dark_theme">Use Dark Theme</string>
+	<string name="use_dark_theme_summary">Check to use Dark Theme.</string>-->
+	
+	<string name ="colorThemeListPreferenceTitle">Choose Colour Theme</string>
+	<string name ="colorThemeListPreferenceDialogTitle">Select which colour theme to use</string>
+	<string name ="colorThemeListPreferenceSummary">Select color theme</string>
+
+	<string name ="systemThemeListPreferenceTitle">Choose System Theme - Android 12 and above</string>
+	<string name ="systemThemeListPreferenceDialogTitle">Select which system theme to use</string>
+	<string name ="systemThemeListPreferenceSummary">For Android 10,11 use the Quick Settings Dark Theme button. Please see our help manual for a full discussion of this feature.</string>
+
+	<!--<string name ="systemThemeListPreferenceTitle">Choose System Theme - Android 10 and above</string>
+	<string name ="systemThemeListPreferenceDialogTitle">Select which system theme to use</string>
+	<string name ="systemThemeListPreferenceSummary">Select system theme</string>-->
+	
+	
+	<string name="use_animations">Use Screen animations</string>
+	<string name="use_animations_summary">Animate the transition from one screen to another of all the screens associated with the side menu</string>
+	<string name="devicesWithNotchesAllowFullscreen">Devices with Notches/Cutouts allow full screen display</string>
+	<string name="devicesWithNotchesAllowFullscreenSummary">Allow these devices to display full screen. Please see our help manual for a full discussion of this feature</string>
+	<!--Preferences.xml-->
+	
+	<!--Subscription DialogFragment-->
+	<string name="subscription_explanation_title">Subscription Information</string>
+	<string name="subscription_explanation_text">
+		Google Play continues to add and enhance features to Subscription Purchases. They have added features such as Account Hold, Subscription Pause, Subscription Restore and the flexability to be able to Upgrade
+		or Downgrade your subscription at any time.
+		\n\nWe provide the subscription state information for each subscription.
+		Once you have made an initial subscription purchase, a subsription record will appear here below the heading Subscriptions.
+		\n\nWhen you tap on a subscription record a new window will open, showing the current subscription status information directly from Google Play\'s servers.
+		It includes details such as your Google Order Number, the Payment and Acknowledgement States of your subscription, Starting Date, Expiration Date, Auto-Renew Date and whether the Subscription has been cancelled
+		either by the system or by the subscriber.
+		\n\nGoogle servers store Subscription date information in UTC format, we convert those dates to your local datetime format.
+		\n\nFor a full discussion re the latest Google Play Subscription features and an example screenshot please refer to our User Guide.
+		\n\nAdding a new para just for a Pixel 6 as the present length of this message is not long enough to make the content scroll without a configuration change.
+		\n\nThat was enough, but one more can\'t hurt.
+	</string>
+	<!--Subscription DialogFragment-->
+	
+</resources>

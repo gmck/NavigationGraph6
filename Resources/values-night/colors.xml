@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<resources>
+
+	<!--RedBmw Dark theme colors-->
+	<color name="red_200">#ef9a9a</color>
+	<color name="red_200_dark">#ba6b6c</color>
+	<color name="red_200_light">#ffcccb</color>
+	<!--RedBmw-->
+
+	<!--BlueAudi Dark theme colors-->
+	<color name="blue_200">#90caf9</color>
+	<color name="blue_200_dark">#5d99c6</color>
+	<color name="blue_200_light">#c3fdff</color>
+	<!--BlueAudi theme colors-->
+
+	<!--GreenBmw Dark theme colors-->
+	<color name="green_200">#a5d6a7</color>
+	<color name="green_200_dark">#75a478</color>
+	<color name="green_200_light">#d7ffd9</color>
+	<!--GreenBmw theme colors-->
+	
+</resources>

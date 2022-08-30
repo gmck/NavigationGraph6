@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+	<!--RedBmw theme colors-->
+	<color name="red_700">#d32f2f</color>
+	<color name="red_700_dark">#9a0007</color>
+	<color name="red_700_light">#ff6659</color>
+
+	<!--RedBmw Dark theme colors-->
+	<!--<color name="red_200">#ef9a9a</color>
+	<color name="red_200_dark">#ba6b6c</color>
+	<color name="red_200_light">#ffcccb</color>-->
+	<!--RedBmw-->
+
+
+	<!--BlueAudi theme colors -->
+	<color name="blue_700">#0070d0</color>
+	<color name="blue_700_dark">#004690</color>
+	<color name="blue_700_light">#5d9eff</color>
+
+	<!--BlueAudi Dark theme colors-->
+	<!--<color name="blue_200">#90caf9</color>
+	<color name="blue_200_dark">#5d99c6</color>
+	<color name="blue_200_light">#c3fdff</color>-->
+	<!--BlueAudi theme colors-->
+
+	<!--GreenBmw theme colors-->
+	<color name="green_700">#00b058</color>
+	<color name="green_700_dark">#007f2c</color>
+	<color name="green_700_light">#57e386</color>
+
+	<!--GreenBmw Dark theme colors-->
+	<!--<color name="green_200">#a5d6a7</color>
+	<color name="green_200_dark">#75a478</color>
+	<color name="green_200_light">#d7ffd9</color>-->
+	<!--GreenBmw theme colors-->
+
+
+	<!--Non color theme specific colors-->
+	<color name="transparent_black">#121212</color>
+	<color name="black">#000000</color>
+	<color name="white">#FFFFFF</color>
+	<color name="black_600">#757575</color>
+
+	<color name="error_light">#b00020</color>
+	<color name="error_dark">#cf6679</color>
+	
+	
+	
+</resources>

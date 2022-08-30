@@ -1,0 +1,154 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+	<!--RED BMW THEME-->
+
+	<style name="Theme.NavigationGraph.RedBmw" parent="Theme.NavigationGraph.RedBmw.Base">
+
+		<!--Vehicle Image-->
+		<item name="vehicle_image">@drawable/bmw5</item>
+
+		<!--AlertDialogRoundedCornersTheme style-->
+		<item name="materialAlertDialogTheme">@style/AlertDialogRoundedCornersTheme</item>
+		
+	</style>
+
+	<!-- Light theme. -->
+	<style name="Theme.NavigationGraph.RedBmw.Base" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+
+		<item name="windowActionBar">false</item>
+		<item name="windowNoTitle">true</item>
+
+		<item name="colorPrimary">@color/red_700</item>
+		<item name="colorPrimaryVariant">@color/red_700_dark</item>
+		<item name="colorOnPrimary">@color/white</item>
+
+		<!-- headings in Preferences and checkboxes, switches etc. -->
+		<item name="colorSecondary">@color/red_700_light</item>
+		<item name="colorOnSecondary">@color/black</item>
+
+		<item name="colorSurface">@color/white</item>
+		<item name="colorOnSurface">@color/black</item>
+
+		<item name="colorError">@color/error_light</item>
+		<item name="colorOnError">@color/white</item>
+
+		<item name="colorOnBackground">@color/black</item>
+		<item name ="colorPagerIndicator">@color/black</item>
+		<item name="android:colorBackground">@color/white</item>
+		
+		<!-- Status bar color. -->
+		<item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
+
+		<!-- NavigationBar-->
+		<item name="android:windowLightNavigationBar">true</item>
+		<!--Navigation Bar color-->
+		<item name="android:navigationBarColor">#80FFFFFF</item>
+
+	</style>
+
+	<!--END OF RED BMW THEME-->
+
+
+	<!--BLUE AUDI THEME-->
+	<style name="Theme.NavigationGraph.BlueAudi" parent="Theme.NavigationGraph.BlueAudi.Base">
+
+		<!--Vehicle Image-->
+		<item name="vehicle_image">@drawable/audi_blue</item>
+
+		<!--AlertDialogRoundedCornersTheme style-->
+		<item name="materialAlertDialogTheme">@style/AlertDialogRoundedCornersTheme</item>
+
+	</style>
+
+	<!--Light theme-->
+	<style name="Theme.NavigationGraph.BlueAudi.Base" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+
+		<item name="windowActionBar">false</item>
+		<item name="windowNoTitle">true</item>
+		
+		<item name="colorPrimary">@color/blue_700</item>
+		<item name="colorPrimaryVariant">@color/blue_700_dark</item>
+		<item name="colorOnPrimary">@color/white</item>
+
+		<!-- headings in Preferences and checkboxes, switches etc. -->
+		<item name="colorSecondary">@color/blue_700_light</item>
+		<item name="colorOnSecondary">@color/black</item>
+
+		<item name="colorSurface">@color/white</item>
+		<item name="colorOnSurface">@color/black</item>
+
+		<item name="colorError">@color/error_light</item>
+		<item name="colorOnError">@color/white</item>
+
+		<item name="colorOnBackground">@color/black</item>
+		<item name ="colorPagerIndicator">@color/black</item>
+		<item name="android:colorBackground">@color/white</item>
+
+		<!--Status bar color.-->
+		<item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
+
+		<!-- NavigationBar-->
+		<item name="android:windowLightNavigationBar">true</item>
+		<!--Navigation Bar color-->
+		<item name="android:navigationBarColor">#80FFFFFF</item>
+
+	</style>
+
+	<!--END OF BLUE AUDI THEME-->
+
+
+	<!--GREEN BMW THEME-->
+
+	<style name="Theme.NavigationGraph.GreenBmw" parent="Theme.NavigationGraph.GreenBmw.Base">
+
+		<!--Vehicle Image-->
+		<item name="vehicle_image">@drawable/green_vehicle1</item>
+
+		<!--AlertDialogRoundedCornersTheme style-->
+		<item name="materialAlertDialogTheme">@style/AlertDialogRoundedCornersTheme</item>
+
+		
+	</style>
+
+	<!-- Light theme. -->
+	<style name="Theme.NavigationGraph.GreenBmw.Base" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+
+		<item name="windowActionBar">false</item>
+		<item name="windowNoTitle">true</item>
+
+		<item name="colorPrimary">@color/green_700</item>
+		<item name="colorPrimaryVariant">@color/green_700_dark</item>
+		<item name="colorOnPrimary">@color/white</item>
+
+		<!-- headings in Preferences and checkboxes, switches etc. -->
+		<item name="colorSecondary">@color/green_700_light</item>
+		<item name="colorOnSecondary">@color/black</item>
+
+		<item name="colorSurface">@color/white</item>
+		<item name="colorOnSurface">@color/black</item>
+
+		<item name="colorError">@color/error_light</item>
+		<item name="colorOnError">@color/white</item>
+
+		<item name="colorOnBackground">@color/black</item>
+		<item name ="colorPagerIndicator">@color/black</item>
+		<item name="android:colorBackground">@color/white</item>
+
+		<!-- Status bar color. -->
+		<item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
+
+		<!-- NavigationBar-->
+		<item name="android:windowLightNavigationBar">true</item>
+		<!--Navigation Bar color-->
+		<item name="android:navigationBarColor">#80FFFFFF</item>
+
+	</style>
+
+	<!--END OF GREEN BMW THEME-->
+
+
+	<style name="Theme.NavigationGraph.AppBarOverlay" parent="ThemeOverlay.MaterialComponents.Dark.ActionBar" />
+	<style name="Theme.NavigationGraph.PopupOverlay" parent="ThemeOverlay.MaterialComponents.Light" />
+
+</resources>
