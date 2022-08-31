@@ -2,6 +2,8 @@
 using Android.OS;
 using Android.Views;
 using AndroidX.Fragment.App;
+using AndroidX.Navigation;
+using AndroidX.Preference;
 using AndroidX.ViewPager2.Widget;
 using com.companyname.NavigationGraph6.Adapters;
 using Google.Android.Material.Tabs;
@@ -10,24 +12,37 @@ using System;
 
 namespace com.companyname.NavigationGraph6.Fragments
 {
-    public class HoldingFragment : Fragment
+    public class LeaderboardPagerFragment : Fragment  
     {
-        private ViewPager2 holdingFragmentViewPager;
-        private HoldingFragmentViewPagerStateAdapter holdingFragmentViewPagerStateAdapter;
-        private TabLayout holdingFragmentTabLayout;
+        private ViewPager2 leaderboardViewPager;
+        private LeaderboardViewPagerStateAdapter leaderboardViewPagerStateAdapter;
+        private TabLayout leaderboardTabLayout;
         private OnPageChangeCallback onPageChangeCallback;  // Have to register and unregister it. -- Not used
-        private bool displayPageIndicator = true;           // just toggle this each way for the indicator - will eventually be an option in Settings
+        private bool displayPageIndicator;
+        private bool useViewPagerAnimations;
+        private NavFragmentOnBackPressedCallback onBackPressedCallback;
 
-        public HoldingFragment() { }
+        public LeaderboardPagerFragment() { }
+
+        #region OnCreate
+        public override void OnCreate(Bundle savedInstanceState)
+        {
+            base.OnCreate(savedInstanceState);
+
+            ISharedPreferences sharedPreferences = PreferenceManager.GetDefaultSharedPreferences(Activity);
+            displayPageIndicator = sharedPreferences.GetBoolean("displayPageIndicator", false);
+            useViewPagerAnimations = sharedPreferences.GetBoolean("useViewPagerAnimations", false);
+        }
+        #endregion
 
         #region OnCreateView
         public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
         {
             base.OnCreateView(inflater, container, savedInstanceState);
 
-            View view = inflater.Inflate(Resource.Layout.fragment_holder_viewpager, container, false);
-            holdingFragmentViewPager = view.FindViewById<ViewPager2>(Resource.Id.holder_viewpager);
-            holdingFragmentTabLayout = view.FindViewById<TabLayout>(Resource.Id.tablayout1);
+            View view = inflater.Inflate(Resource.Layout.fragment_leaderboard_viewpager, container, false);
+            leaderboardViewPager = view.FindViewById<ViewPager2>(Resource.Id.holder_viewpager);
+            leaderboardTabLayout = view.FindViewById<TabLayout>(Resource.Id.tablayout1);
             return view;
         }
         #endregion
@@ -41,38 +56,54 @@ namespace com.companyname.NavigationGraph6.Fragments
             // Refer to https://stackoverflow.com/questions/61779776/leak-canary-detects-memory-leaks-for-tablayout-with-viewpager2/62184494#62184494 
             // This is using the third of the three FragmentStateAdapter public constructors.
             // Note - it is also an abstract class, so we can add out own params. e.g. passing the total number of fragments that the ViewPager2 will hold.
-            holdingFragmentViewPagerStateAdapter = new HoldingFragmentViewPagerStateAdapter(ChildFragmentManager, ViewLifecycleOwner.Lifecycle, 3);
+            leaderboardViewPagerStateAdapter = new LeaderboardViewPagerStateAdapter(ChildFragmentManager, ViewLifecycleOwner.Lifecycle, 3);
 
             // ViewPager2
-            holdingFragmentViewPager.OffscreenPageLimit =  ViewPager2.OffscreenPageLimitDefault;
-            holdingFragmentViewPager.Adapter = holdingFragmentViewPagerStateAdapter;
-            holdingFragmentViewPager.SetPageTransformer(new ZoomOutPageTransformer());      // Needs some more controls in the xml of each fragment to see the effect - swipe slowly and you'll pick it up.
+            leaderboardViewPager.OffscreenPageLimit =  ViewPager2.OffscreenPageLimitDefault;
+            leaderboardViewPager.Adapter = leaderboardViewPagerStateAdapter;
+            if (useViewPagerAnimations)
+                leaderboardViewPager.SetPageTransformer(new ZoomOutPageTransformer());      // Needs some more controls in the xml of each fragment to see the effect 
 
             // Create an OnPageChangeCallback and register it with the dashboardViewPager. We don't need it here - but keep as an example.
             onPageChangeCallback = new OnPageChangeCallback(Activity);
-            holdingFragmentViewPager.RegisterOnPageChangeCallback(onPageChangeCallback);  // Unregister it in OnDestroy
+            leaderboardViewPager.RegisterOnPageChangeCallback(onPageChangeCallback);  // Unregister it in OnDestroy
 
-            TabLayoutMediator tabMediator = new TabLayoutMediator(holdingFragmentTabLayout, holdingFragmentViewPager, new TabConfigurationStrategy());
+            TabLayoutMediator tabMediator = new TabLayoutMediator(leaderboardTabLayout, leaderboardViewPager, new TabConfigurationStrategy());
             tabMediator.Attach();
 
             if (displayPageIndicator)
             {
                 // Leave this - just another way of doing it, but the easier way is just to use the Dimension in dp which automatically takes care of Density
                 // No this makes the bar smaller than standard and therefore better places the two gauges.
-                ViewGroup.LayoutParams layoutParams = holdingFragmentTabLayout.LayoutParameters;
+                ViewGroup.LayoutParams layoutParams = leaderboardTabLayout.LayoutParameters;
                 layoutParams.Height = (int)(16 * Resources.DisplayMetrics.Density);
-                holdingFragmentTabLayout.LayoutParameters = layoutParams;
+                leaderboardTabLayout.LayoutParameters = layoutParams;
                 TogglePageIndicatorClickable(false);
             }
             else
-                holdingFragmentTabLayout.Visibility = ViewStates.Gone;
+                leaderboardTabLayout.Visibility = ViewStates.Gone;
+        }
+        #endregion
+
+        #region OnResume
+        public override void OnResume()
+        {
+            base.OnResume();
+
+            onBackPressedCallback = new NavFragmentOnBackPressedCallback(this, true);
+            //// Android docs:  Strongly recommended to use the ViewLifecycleOwner.This ensures that the OnBackPressedCallback is only added when the LifecycleOwner is Lifecycle.State.STARTED.
+            //// The activity also removes registered callbacks when their associated LifecycleOwner is destroyed, which prevents memory leaks and makes it suitable for use in fragments or other lifecycle owners
+            //// that have a shorter lifetime than the activity.
+            //// Note: this rule out using OnAttach(Context context) as the view hasn't been created yet.
+            RequireActivity().OnBackPressedDispatcher.AddCallback(ViewLifecycleOwner, onBackPressedCallback);
         }
         #endregion
 
         #region OnDestroy
         public override void OnDestroy()
         {
-            holdingFragmentViewPager.UnregisterOnPageChangeCallback(onPageChangeCallback);
+            leaderboardViewPager.UnregisterOnPageChangeCallback(onPageChangeCallback);
+            onBackPressedCallback?.Remove();
             base.OnDestroy();
         }
         #endregion
@@ -82,7 +113,7 @@ namespace com.companyname.NavigationGraph6.Fragments
         {
             // TODO: We would need a listener if we want to turn this feature on or off.
             // Ideally normally each indicator would be clickable. When the the statusBar and NavigationBar appear make them non clickable
-            foreach (View view in holdingFragmentTabLayout.Touchables)
+            foreach (View view in leaderboardTabLayout.Touchables)
                 view.Clickable = enable;
         }
         #endregion
@@ -159,6 +190,19 @@ namespace com.companyname.NavigationGraph6.Fragments
             {
 
             }
+        }
+        #endregion
+
+        #region HandleBackPressed
+        public void HandleBackPressed(NavOptions navOptions)
+        {
+            onBackPressedCallback.Enabled = false;
+
+            NavController navController = Navigation.FindNavController(Activity, Resource.Id.nav_host);
+
+            // Navigate back to the SlideShowFragment
+            navController.PopBackStack(Resource.Id.slideshow_fragment, false);
+            navController.Navigate(Resource.Id.slideshow_fragment, null, navOptions);
         }
         #endregion
 

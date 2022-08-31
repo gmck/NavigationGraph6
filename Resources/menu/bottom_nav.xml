@@ -17,13 +17,8 @@
 
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     
-    <!--<item
-        android:id="@+id/leaderboard_fragment"
-        android:icon="@drawable/ic_list"
-        android:title="@string/title_leaderboard" />-->
-
-	<item
-        android:id="@+id/holding_fragment"
+    <item
+        android:id="@+id/leaderboardpager_fragment"
         android:icon="@drawable/ic_list"
         android:title="@string/title_leaderboard" />
 	

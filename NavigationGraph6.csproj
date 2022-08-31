@@ -71,15 +71,14 @@
     <Reference Include="System.Numerics.Vectors" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Adapters\HolderFragmentViewPagerStateAdapter.cs" />
+    <Compile Include="Adapters\LeaderboardViewPagerStateAdapter.cs" />
     <Compile Include="AnimationResource.cs" />
     <Compile Include="BaseActivity.cs" />
     <Compile Include="ColorThemeListPreference.cs" />
     <Compile Include="Dialogs\BasicDialogFragment.cs" />
     <Compile Include="Fragments\GalleryFragment.cs" />
-    <Compile Include="Fragments\HoldingFragment.cs" />
+    <Compile Include="Fragments\LeaderboardPagerFragment.cs" />
     <Compile Include="Fragments\HomeFragment.cs" />
-    <Compile Include="Fragments\LeaderboardFragment.cs" />
     <Compile Include="Fragments\RegisterFragment.cs" />
     <Compile Include="Fragments\SampleFragment1.cs" />
     <Compile Include="Fragments\SampleFragment2.cs" />
@@ -155,7 +154,7 @@
     <AndroidResource Include="Resources\layout\fragment_gallery.xml" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\layout\fragment_holder_viewpager.xml" />
+    <AndroidResource Include="Resources\layout\fragment_leaderboard_viewpager.xml" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\fragment_home.xml" />

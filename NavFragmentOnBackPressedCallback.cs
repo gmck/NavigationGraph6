@@ -51,8 +51,8 @@ namespace com.companyname.NavigationGraph6
                 galleryFragment.HandleBackPressed(navOptions);
             else if (fragment is SlideshowFragment slideshowFragment)
                 slideshowFragment.HandleBackPressed(navOptions);
-            else if (fragment is LeaderboardFragment leaderboardFragment)
-                leaderboardFragment.HandleBackPressed(navOptions);
+            else if (fragment is LeaderboardPagerFragment leaderboardPagerFragment)
+                leaderboardPagerFragment.HandleBackPressed(navOptions);
             else if (fragment is RegisterFragment registerFragment)
                 registerFragment.HandleBackPressed(navOptions);
         }

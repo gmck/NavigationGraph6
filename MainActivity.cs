@@ -223,7 +223,8 @@ namespace com.companyname.NavigationGraph6
 
             switch (e.Item.ItemId)
             {
-                case Resource.Id.holding_fragment:
+                //case Resource.Id.holding_fragment:
+                case Resource.Id.leaderboardpager_fragment:
                 case Resource.Id.register_fragment:
                     proceed = true;
                     break;
@@ -259,10 +260,9 @@ namespace com.companyname.NavigationGraph6
                 drawerLayout.SetDrawerLockMode(DrawerLayout.LockModeUnlocked);
             }
 
-            // By default because the LeaderboardFragment and the RegisterFragment are not top level fragments, they will default to showing a up button (left arrow) plus the title.
+            // By default because the LeaderboardPagerFragment and the RegisterFragment are not top level fragments, they will default to showing a up button (left arrow) plus the title.
             // If you don't want the up button, remove it here. This also means that the additional code in OnSupportNavigationUp can be removed. 
-            //if (navDestination.Id == Resource.Id.leaderboard_fragment || navDestination.Id == Resource.Id.register_fragment)
-            if (navDestination.Id == Resource.Id.holding_fragment || navDestination.Id == Resource.Id.register_fragment)
+            if (navDestination.Id == Resource.Id.leaderboardpager_fragment || navDestination.Id == Resource.Id.register_fragment)
             {
                 toolbar.Title = navDestination.Label;
                 toolbar.NavigationIcon = null;
@@ -303,7 +303,7 @@ namespace com.companyname.NavigationGraph6
             animateFragments = sharedPreferences.GetBoolean("use_animations", false);
         }
         #endregion
-        
+
 
         // code removed from the MainActivity as compared to NavigationGraph5
 

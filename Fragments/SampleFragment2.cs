@@ -21,11 +21,7 @@ namespace com.companyname.NavigationGraph6.Fragments
         public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
         {
             // Use this to return your custom view for this Fragment
-            View view = inflater.Inflate(Resource.Layout.fragment_sample2, container, false);
-
-            TextView textView = view.FindViewById<TextView>(Resource.Id.text_sample2);
-            textView.Text = "This is Sample 2 fragment";
-            return view;
+            return inflater.Inflate(Resource.Layout.fragment_sample2, container, false);
         }
         #endregion
     }

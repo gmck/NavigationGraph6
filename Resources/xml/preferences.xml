@@ -8,7 +8,7 @@
 		app:iconSpaceReserved="false"
 		android:key="general"
 		android:title ="@string/generalCategoryTitle">
-		
+
 		<com.companyname.NavigationGraph6.ColorThemeListPreference
 			app:iconSpaceReserved="false"
 			android:key="colorThemeValue"
@@ -16,7 +16,7 @@
 			android:title ="@string/colorThemeListPreferenceTitle"
 			android:dialogTitle ="@string/colorThemeListPreferenceDialogTitle"
 			android:summary ="@string/colorThemeListPreferenceSummary"/>
-		
+
 		<com.companyname.NavigationGraph6.SystemThemeListPreference
 			app:iconSpaceReserved="false"
 			android:key="systemThemeValue"
@@ -45,6 +45,21 @@
 			android:key ="devicesWithNotchesAllowFullScreen"
 			android:summary ="@string/devicesWithNotchesAllowFullscreenSummary"
 			android:title ="@string/devicesWithNotchesAllowFullscreen"/>
+
+
+		<androidx.preference.CheckBoxPreference
+			app:iconSpaceReserved="false"
+			android:defaultValue ="false"
+			android:key ="useViewPagerAnimations"
+			android:title ="@string/animateViewPagerTitle"
+			android:summary ="@string/animateViewPagerSummary"/>
+
+		<androidx.preference.CheckBoxPreference
+		  app:iconSpaceReserved="false"
+		  android:defaultValue="false"
+		  android:key="displayPageIndicator"
+		  android:summary="@string/displayPageIndicatorValueSummary"
+		  android:title="@string/displayPageIndicatorValueTitle" />
 
 	</androidx.preference.PreferenceCategory>
 

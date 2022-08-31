@@ -18,9 +18,6 @@
 	<string name="use_dark_theme">Dark Theme</string>
 	<string name="use_dark_theme_summary">For older devices running less than Android 10 - Check to use Dark Theme.</string>
 
-	<!--<string name="use_dark_theme">Use Dark Theme</string>
-	<string name="use_dark_theme_summary">Check to use Dark Theme.</string>-->
-	
 	<string name ="colorThemeListPreferenceTitle">Choose Colour Theme</string>
 	<string name ="colorThemeListPreferenceDialogTitle">Select which colour theme to use</string>
 	<string name ="colorThemeListPreferenceSummary">Select color theme</string>
@@ -28,16 +25,18 @@
 	<string name ="systemThemeListPreferenceTitle">Choose System Theme - Android 12 and above</string>
 	<string name ="systemThemeListPreferenceDialogTitle">Select which system theme to use</string>
 	<string name ="systemThemeListPreferenceSummary">For Android 10,11 use the Quick Settings Dark Theme button. Please see our help manual for a full discussion of this feature.</string>
-
-	<!--<string name ="systemThemeListPreferenceTitle">Choose System Theme - Android 10 and above</string>
-	<string name ="systemThemeListPreferenceDialogTitle">Select which system theme to use</string>
-	<string name ="systemThemeListPreferenceSummary">Select system theme</string>-->
-	
 	
 	<string name="use_animations">Use Screen animations</string>
 	<string name="use_animations_summary">Animate the transition from one screen to another of all the screens associated with the side menu</string>
 	<string name="devicesWithNotchesAllowFullscreen">Devices with Notches/Cutouts allow full screen display</string>
 	<string name="devicesWithNotchesAllowFullscreenSummary">Allow these devices to display full screen. Please see our help manual for a full discussion of this feature</string>
+
+	<string name ="displayPageIndicatorValueTitle">Display circular page indicator</string>
+	<string name ="displayPageIndicatorValueSummary">Display circular page indicator on the ViewPager</string>
+
+	<string name ="animateViewPagerTitle">Use ViewPager transitions</string>
+	<string name ="animateViewPagerSummary">Animate the transition when swiping from one page to another</string>
+	
 	<!--Preferences.xml-->
 	
 	<!--Subscription DialogFragment-->
@@ -56,5 +55,9 @@
 		\n\nThat was enough, but one more can\'t hurt.
 	</string>
 	<!--Subscription DialogFragment-->
+
+	<string name="sample_1_fragment">This is the Sample 1 fragment</string>
+	<string name="sample_2_fragment">This is the Sample 2 fragment</string>
+	<string name="sample_3_fragment">This is the Sample 3 fragment</string>
 	
 </resources>

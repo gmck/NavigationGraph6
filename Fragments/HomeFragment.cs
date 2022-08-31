@@ -66,7 +66,7 @@ namespace com.companyname.NavigationGraph6.Fragments
         public void OnPrepareMenu(IMenu menu)
         {
             // I doubt that this is the correct way to disable a menuItem - but it appears to work.Trying to implement behaviour of the deprecated OnPrepareOptionsMenu
-            // Think it should be using MenuHostHelper but not sure how to implement it still trying to figure it out.
+            // Think it should be using MenuHostHelper but not sure how to implement it - still trying to figure it out.
 
             IMenuItem menuItemSettings = menu.FindItem(Resource.Id.action_settings);
             if (disableSettingsMenuItem)

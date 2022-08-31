@@ -31,8 +31,8 @@
 
 	<!--not a top destination-->
 	<fragment
-		android:id="@+id/holding_fragment"
-		android:name="com.companyname.navigationgraph6.fragments.HoldingFragment"
+		android:id="@+id/leaderboardpager_fragment"
+		android:name="com.companyname.navigationgraph6.fragments.LeaderboardPagerFragment"
 		android:label="Leaderboard"
         tools:layout="@layout/fragment_holder_viewpager"/>
 	
