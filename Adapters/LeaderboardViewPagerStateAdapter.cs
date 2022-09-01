@@ -2,6 +2,8 @@
 using AndroidX.Lifecycle;
 using AndroidX.ViewPager2.Adapter;
 using com.companyname.NavigationGraph6.Fragments;
+using Java.Lang.Reflect;
+using Org.W3c.Dom;
 
 namespace com.companyname.NavigationGraph6.Adapters
 {
@@ -9,16 +11,18 @@ namespace com.companyname.NavigationGraph6.Adapters
     {
         private readonly int itemCount;
 
-        // This is the one we are using in this app.
+        // This is the constructor we are using in this app.
         // Refer to https://stackoverflow.com/questions/61779776/leak-canary-detects-memory-leaks-for-tablayout-with-viewpager2/62184494#62184494 
-        
+
         public LeaderboardViewPagerStateAdapter(FragmentManager fragmentManager, Lifecycle lifecylce, int itemCount) : base(fragmentManager, lifecylce)
         {
             this.itemCount = itemCount;
         }
 
+        // implement inherited abstract member ItemCount
         public override int ItemCount => itemCount;
 
+        // implement inherited abstract member
         public override Fragment CreateFragment(int position)
         {
             // Could just replace with new SampleFragmant1() etc rather than using GetInstance. Using GetInstance allows you to optionally attach a bundle and supply the parameter int position if required to the fragment.

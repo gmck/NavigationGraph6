@@ -56,7 +56,7 @@
 
 		<androidx.preference.CheckBoxPreference
 		  app:iconSpaceReserved="false"
-		  android:defaultValue="false"
+		  android:defaultValue="true"
 		  android:key="displayPageIndicator"
 		  android:summary="@string/displayPageIndicatorValueSummary"
 		  android:title="@string/displayPageIndicatorValueTitle" />

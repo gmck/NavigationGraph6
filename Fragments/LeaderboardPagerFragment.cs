@@ -113,6 +113,7 @@ namespace com.companyname.NavigationGraph6.Fragments
         {
             // TODO: We would need a listener if we want to turn this feature on or off.
             // Ideally normally each indicator would be clickable. When the the statusBar and NavigationBar appear make them non clickable
+            // These comments really only apply when using a fully immersive fragment.
             foreach (View view in leaderboardTabLayout.Touchables)
                 view.Clickable = enable;
         }
@@ -122,7 +123,7 @@ namespace com.companyname.NavigationGraph6.Fragments
         private class TabConfigurationStrategy : Java.Lang.Object, TabLayoutMediator.ITabConfigurationStrategy
         {
             // No need to do anything here - empty method as the tablayout itself is supplying the tab selector - see the xml.
-            public void OnConfigureTab(TabLayout.Tab p0, int p1)
+            public void OnConfigureTab(TabLayout.Tab tab, int position)
             {
 
             }
