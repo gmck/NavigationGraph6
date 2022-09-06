@@ -9,7 +9,6 @@ namespace com.companyname.NavigationGraph6.Fragments
     public class SlideshowFragment : Fragment
     {
         private NavFragmentOnBackPressedCallback onBackPressedCallback;
-
         public SlideshowFragment() { }
 
         #region OnCreateView

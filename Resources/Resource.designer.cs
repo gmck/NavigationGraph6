@@ -11014,49 +11014,55 @@ namespace com.companyname.NavigationGraph6
 			public const int search_menu_title = 2131755155;
 			
 			// aapt resource value: 0x7F100094
-			public const int status_bar_notification_info_overflow = 2131755156;
+			public const int showSubscriptionMenuItemSummary = 2131755156;
 			
 			// aapt resource value: 0x7F100095
-			public const int subscription_explanation_text = 2131755157;
+			public const int showSubscriptionMenuItemTitle = 2131755157;
 			
 			// aapt resource value: 0x7F100096
-			public const int subscription_explanation_title = 2131755158;
+			public const int status_bar_notification_info_overflow = 2131755158;
 			
 			// aapt resource value: 0x7F100097
-			public const int summary_collapsed_preference_list = 2131755159;
+			public const int subscription_explanation_text = 2131755159;
 			
 			// aapt resource value: 0x7F100098
-			public const int systemThemeListPreferenceDialogTitle = 2131755160;
+			public const int subscription_explanation_title = 2131755160;
 			
 			// aapt resource value: 0x7F100099
-			public const int systemThemeListPreferenceSummary = 2131755161;
+			public const int summary_collapsed_preference_list = 2131755161;
 			
 			// aapt resource value: 0x7F10009A
-			public const int systemThemeListPreferenceTitle = 2131755162;
+			public const int systemThemeListPreferenceDialogTitle = 2131755162;
 			
 			// aapt resource value: 0x7F10009B
-			public const int title_leaderboard = 2131755163;
+			public const int systemThemeListPreferenceSummary = 2131755163;
 			
 			// aapt resource value: 0x7F10009C
-			public const int title_register = 2131755164;
+			public const int systemThemeListPreferenceTitle = 2131755164;
 			
 			// aapt resource value: 0x7F10009D
-			public const int use_animations = 2131755165;
+			public const int title_leaderboard = 2131755165;
 			
 			// aapt resource value: 0x7F10009E
-			public const int use_animations_summary = 2131755166;
+			public const int title_register = 2131755166;
 			
 			// aapt resource value: 0x7F10009F
-			public const int use_dark_theme = 2131755167;
+			public const int use_animations = 2131755167;
 			
 			// aapt resource value: 0x7F1000A0
-			public const int use_dark_theme_summary = 2131755168;
+			public const int use_animations_summary = 2131755168;
 			
 			// aapt resource value: 0x7F1000A1
-			public const int v7_preference_off = 2131755169;
+			public const int use_dark_theme = 2131755169;
 			
 			// aapt resource value: 0x7F1000A2
-			public const int v7_preference_on = 2131755170;
+			public const int use_dark_theme_summary = 2131755170;
+			
+			// aapt resource value: 0x7F1000A3
+			public const int v7_preference_off = 2131755171;
+			
+			// aapt resource value: 0x7F1000A4
+			public const int v7_preference_on = 2131755172;
 			
 			static String()
 			{

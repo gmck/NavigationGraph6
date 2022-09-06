@@ -1,7 +1,6 @@
 ﻿using Android.OS;
 using Android.Views;
 using Android.Widget;
-using AndroidX.Core.View;
 using AndroidX.Fragment.App;
 using AndroidX.Navigation;
 

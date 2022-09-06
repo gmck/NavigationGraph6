@@ -24,17 +24,6 @@ namespace com.companyname.NavigationGraph6.Fragments
 
         public LeaderboardPagerFragment() { }
 
-        #region OnCreate
-        public override void OnCreate(Bundle savedInstanceState)
-        {
-            base.OnCreate(savedInstanceState);
-
-            ISharedPreferences sharedPreferences = PreferenceManager.GetDefaultSharedPreferences(Activity);
-            displayPageIndicator = sharedPreferences.GetBoolean("displayPageIndicator", false);
-            useViewPagerAnimations = sharedPreferences.GetBoolean("useViewPagerAnimations", false);
-        }
-        #endregion
-
         #region OnCreateView
         public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
         {
@@ -52,6 +41,11 @@ namespace com.companyname.NavigationGraph6.Fragments
         {
             base.OnViewCreated(view, savedInstanceState);
 
+            ISharedPreferences sharedPreferences = PreferenceManager.GetDefaultSharedPreferences(Activity);
+            displayPageIndicator = sharedPreferences.GetBoolean("displayPageIndicator", false);
+            useViewPagerAnimations = sharedPreferences.GetBoolean("useViewPagerAnimations", false);
+            
+            
             // FragmentStateAdapter - which calls CreateFragment for the number of fragments - note the extra param ViewLifecycleOwner.Lifecycle 
             // Refer to https://stackoverflow.com/questions/61779776/leak-canary-detects-memory-leaks-for-tablayout-with-viewpager2/62184494#62184494 
             // This is using the third of the three FragmentStateAdapter public constructors.
@@ -61,6 +55,7 @@ namespace com.companyname.NavigationGraph6.Fragments
             // ViewPager2
             leaderboardViewPager.OffscreenPageLimit =  ViewPager2.OffscreenPageLimitDefault;
             leaderboardViewPager.Adapter = leaderboardViewPagerStateAdapter;
+            
             if (useViewPagerAnimations)
                 leaderboardViewPager.SetPageTransformer(new ZoomOutPageTransformer());      // Needs some more controls in the xml of each fragment to see the effect 
 

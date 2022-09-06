@@ -34,14 +34,17 @@ namespace com.companyname.NavigationGraph6.Fragments
         #region OnCreateView
         public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
         {
-            //HasOptionsMenu = true;
             View view = inflater.Inflate(Resource.Layout.fragment_register, container, false);
             TextView textView = view.FindViewById<TextView>(Resource.Id.text_register);
             textView.Text = "This is Register fragment";
 
             // New with release of Xamarin.AndroidX.Navigation.Fragment 2.5.1
-            IMenuHost menuHost = RequireActivity();
-            menuHost.AddMenuProvider(this, ViewLifecycleOwner, AndroidX.Lifecycle.Lifecycle.State.Resumed);
+
+            //IMenuHost menuHost = RequireActivity();
+            //menuHost.AddMenuProvider(this, ViewLifecycleOwner, AndroidX.Lifecycle.Lifecycle.State.Resumed);
+
+            // More concise than the above 
+            (RequireActivity() as IMenuHost).AddMenuProvider(this, ViewLifecycleOwner, AndroidX.Lifecycle.Lifecycle.State.Resumed);
 
             return view;
         }

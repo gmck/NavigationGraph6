@@ -36,9 +36,12 @@
 
 	<string name ="animateViewPagerTitle">Use ViewPager transitions</string>
 	<string name ="animateViewPagerSummary">Animate the transition when swiping from one page to another</string>
+
+	<string name ="showSubscriptionMenuItemTitle">Subscription Menu Item</string>
+	<string name ="showSubscriptionMenuItemSummary">If checked the Subscription Menu Item is enabled in the menu</string>
 	
 	<!--Preferences.xml-->
-	
+
 	<!--Subscription DialogFragment-->
 	<string name="subscription_explanation_title">Subscription Information</string>
 	<string name="subscription_explanation_text">

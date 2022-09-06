@@ -61,6 +61,13 @@
 		  android:summary="@string/displayPageIndicatorValueSummary"
 		  android:title="@string/displayPageIndicatorValueTitle" />
 
+		<androidx.preference.CheckBoxPreference
+		  app:iconSpaceReserved="false"
+		  android:defaultValue="false"
+		  android:key="showSubscriptionInfo"
+		  android:summary="@string/showSubscriptionMenuItemSummary"
+		  android:title="@string/showSubscriptionMenuItemTitle" />
+
 	</androidx.preference.PreferenceCategory>
 
 </androidx.preference.PreferenceScreen>

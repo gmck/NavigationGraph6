@@ -304,6 +304,10 @@ namespace com.companyname.NavigationGraph6
         }
         #endregion
 
+        #region !! Methods only called by ImmersiveFragment
+        //public void DisableDrawerLayout() => drawerLayout.SetDrawerLockMode(DrawerLayout.LockModeLockedClosed);
+        //public void EnableDrawerLayout() => drawerLayout.SetDrawerLockMode(DrawerLayout.LockModeUnlocked);
+        #endregion
 
         // code removed from the MainActivity as compared to NavigationGraph5
 

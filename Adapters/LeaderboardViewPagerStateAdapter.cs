@@ -31,9 +31,9 @@ namespace com.companyname.NavigationGraph6.Adapters
             // The FragmentManager is responsible for looking after the creating and destroying of the fragments as the user swipes through the pages.
             return position switch
             {
-                0 => SampleFragment1.NewInstance(),
-                1 => SampleFragment2.NewInstance(),
-                2 => SampleFragment3.NewInstance(),
+                0 => new SampleFragment1(), //.NewInstance(),
+                1 => new SampleFragment2(), //.NewInstance(),
+                2 => new SampleFragment3(), //.NewInstance(),
                 _ => null,
             };
         }
