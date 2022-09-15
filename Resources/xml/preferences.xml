@@ -41,7 +41,7 @@
 
 		<androidx.preference.CheckBoxPreference
 			app:iconSpaceReserved="false"
-			android:defaultValue ="false"
+			android:defaultValue ="true"
 			android:key ="devicesWithNotchesAllowFullScreen"
 			android:summary ="@string/devicesWithNotchesAllowFullscreenSummary"
 			android:title ="@string/devicesWithNotchesAllowFullscreen"/>

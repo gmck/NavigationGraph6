@@ -26,4 +26,10 @@
         android:id="@+id/register_fragment"
         android:icon="@drawable/ic_feedback"
         android:title="@string/title_register" />
+
+	<item
+		android:id="@+id/race_result_fragment"
+		android:icon ="@drawable/ic_speedo1"
+		android:title ="@string/title_speedo"/>
+	
 </menu>

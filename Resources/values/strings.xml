@@ -11,6 +11,7 @@
 	
 	<string name="title_register">Register</string>
 	<string name="title_leaderboard">Leaderboard</string>
+	<string name="title_speedo">Race Results</string>
 	
 	<!--Preferences.xml-->
 	<string name ="generalCategoryTitle">General</string>

@@ -19,7 +19,7 @@
     <AndroidResgenClass>Resource</AndroidResgenClass>
     <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
     <AndroidUseLatestPlatformSdk>false</AndroidUseLatestPlatformSdk>
-    <TargetFrameworkVersion>v12.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v13.0</TargetFrameworkVersion>
     <AndroidManifest>Properties\AndroidManifest.xml</AndroidManifest>
     <MonoAndroidResourcePrefix>Resources</MonoAndroidResourcePrefix>
     <MonoAndroidAssetsPrefix>Assets</MonoAndroidAssetsPrefix>
@@ -77,8 +77,10 @@
     <Compile Include="ColorThemeListPreference.cs" />
     <Compile Include="Dialogs\BasicDialogFragment.cs" />
     <Compile Include="Fragments\GalleryFragment.cs" />
+    <Compile Include="Fragments\ImmersiveFragment.cs" />
     <Compile Include="Fragments\LeaderboardPagerFragment.cs" />
     <Compile Include="Fragments\HomeFragment.cs" />
+    <Compile Include="Fragments\RaceResultFragment.cs" />
     <Compile Include="Fragments\RegisterFragment.cs" />
     <Compile Include="Fragments\SampleFragment1.cs" />
     <Compile Include="Fragments\SampleFragment2.cs" />
@@ -128,7 +130,7 @@
   <ItemGroup>
     <PackageReference Include="Xamarin.AndroidX.AppCompat" Version="1.5.0" />
     <PackageReference Include="Xamarin.AndroidX.Core.SplashScreen">
-      <Version>1.0.0</Version>
+      <Version>1.0.0.1-rc01</Version>
     </PackageReference>
     <PackageReference Include="Xamarin.AndroidX.Navigation.Fragment">
       <Version>2.5.1</Version>
@@ -269,6 +271,14 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\navigation\nav_graph.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\ic_speedo1.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\fragment_raceresult.xml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.

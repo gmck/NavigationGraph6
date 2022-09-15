@@ -44,11 +44,6 @@ namespace com.companyname.NavigationGraph6.Fragments
                 else
                     checkboxDarkThemePreference.Enabled = false;
             }
-
-            if (PreferenceScreen.FindPreference("showSubscriptionInfo") is CheckBoxPreference showSubscriptionInfoPreference)
-            {
-                showSubscriptionInfoPreference.PreferenceChange += ShowSubscriptionInfoPreference_PreferenceChange;
-            }
         }
 
         
@@ -64,16 +59,6 @@ namespace com.companyname.NavigationGraph6.Fragments
 
             // This is only available to devices running less than Android 10.
             SetDefaultNightMode(requestedNightMode);
-        }
-        #endregion
-
-        #region ShowSubscriptionInfoPreference_PreferenceChange
-        private void ShowSubscriptionInfoPreference_PreferenceChange(object sender, Preference.PreferenceChangeEventArgs e)
-        {
-            bool showShowSubScriptionInfo = (bool)e.NewValue;
-            ISharedPreferencesEditor editor = sharedPreferences.Edit();
-            editor.PutBoolean("showSubscriptionInfo", showShowSubScriptionInfo).Apply();
-            editor.Commit();
         }
         #endregion
 

@@ -25,7 +25,7 @@ namespace com.companyname.NavigationGraph6.Fragments
     // AddMenuProvider is based on LifeCycle therefore it is only applicable while this fragment is visible. 
     // Any fragment that doesn't require a menu then doesn't implement the IMenuProvider
 
-    public class RegisterFragment : Fragment, IMenuProvider
+    public class RegisterFragment : Fragment, IMenuProvider 
     {
         private NavFragmentOnBackPressedCallback onBackPressedCallback;
        
@@ -36,16 +36,14 @@ namespace com.companyname.NavigationGraph6.Fragments
         {
             View view = inflater.Inflate(Resource.Layout.fragment_register, container, false);
             TextView textView = view.FindViewById<TextView>(Resource.Id.text_register);
-            textView.Text = "This is Register fragment";
-
+            textView.Text = "This is the Register fragment";
+            
             // New with release of Xamarin.AndroidX.Navigation.Fragment 2.5.1
-
             //IMenuHost menuHost = RequireActivity();
             //menuHost.AddMenuProvider(this, ViewLifecycleOwner, AndroidX.Lifecycle.Lifecycle.State.Resumed);
 
             // More concise than the above 
             (RequireActivity() as IMenuHost).AddMenuProvider(this, ViewLifecycleOwner, AndroidX.Lifecycle.Lifecycle.State.Resumed);
-
             return view;
         }
         #endregion
@@ -104,6 +102,7 @@ namespace com.companyname.NavigationGraph6.Fragments
             
             // Navigate back to the SlideShowFragment
             navController.PopBackStack(Resource.Id.slideshow_fragment, false);
+            
             navController.Navigate(Resource.Id.slideshow_fragment, null, navOptions);
         }
         #endregion

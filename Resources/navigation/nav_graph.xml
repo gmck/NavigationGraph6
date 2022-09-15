@@ -43,5 +43,11 @@
 		android:label="Register"
         tools:layout="@layout/fragment_register"/>
 
+	<fragment
+		android:id="@+id/race_result_fragment"
+		android:name="com.companyname.navigationgraph6.fragments.RaceResultFragment"
+		android:label="Race Result"
+        tools:layout="@layout/fragment_race_result"/>
+
 </navigation>
 

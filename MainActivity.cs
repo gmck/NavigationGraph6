@@ -1,7 +1,6 @@
 ﻿using Android.App;
 using Android.OS;
 using Android.Views;
-using AndroidX.AppCompat.Widget;
 using AndroidX.Core.View;
 using AndroidX.DrawerLayout.Widget;
 using AndroidX.Navigation;
@@ -26,9 +25,7 @@ namespace com.companyname.NavigationGraph6
         private DrawerLayout drawerLayout;
         private BottomNavigationView bottomNavigationView;
         private NavController navController;
-        private Toolbar toolbar;
-
-
+       
         // Preference variables - see OnDestinationChanged where they are checked
         private bool devicesWithNotchesAllowFullScreen;             // allow full screen for devices with notches
         private bool animateFragments;                              // animate fragments 
@@ -51,7 +48,7 @@ namespace com.companyname.NavigationGraph6
             Window.AddFlags(WindowManagerFlags.TranslucentStatus);
 
             // Require a toolbar
-            toolbar = FindViewById<Toolbar>(Resource.Id.toolbar);
+            AndroidX.AppCompat.Widget.Toolbar toolbar = FindViewById<AndroidX.AppCompat.Widget.Toolbar>(Resource.Id.toolbar);
             SetSupportActionBar(toolbar);
             ViewCompat.SetOnApplyWindowInsetsListener(toolbar, this);
 
@@ -113,11 +110,17 @@ namespace com.companyname.NavigationGraph6
         #region OnApplyWindowInsets
         public WindowInsetsCompat OnApplyWindowInsets(View v, WindowInsetsCompat insets)
         {
-            if (v is Toolbar)
-            {
-                AndroidX.Core.Graphics.Insets statusBarInsets = insets.GetInsets(WindowInsetsCompat.Type.StatusBars());
+            #region Notes
+            // Using a Pixel3a, which doesn't have a notch. Took some time to figure this out. The debugger was not breaking here when first starting the app or even on screen rotation even when simulating a display 
+            // cutout. However once you add <item name="android:windowLayoutInDisplayCutoutMode">shortEdges</item> to your theme, which changes the default setting of LayoutInDisplayCutoutMode.Default (letter box 
+            // both portraint and landscape - a terrible look). The debugger now will break at the following line. 
+            #endregion
 
-                SetMargins(v, statusBarInsets);
+            if (v is AndroidX.AppCompat.Widget.Toolbar)
+            {
+                AndroidX.Core.Graphics.Insets statusBarsInsets = insets.GetInsets(WindowInsetsCompat.Type.StatusBars());
+
+                SetMargins(v, statusBarsInsets);
                 if (Build.VERSION.SdkInt >= BuildVersionCodes.P)
                 {
                     if (insets.DisplayCutout != null)
@@ -226,9 +229,10 @@ namespace com.companyname.NavigationGraph6
                 //case Resource.Id.holding_fragment:
                 case Resource.Id.leaderboardpager_fragment:
                 case Resource.Id.register_fragment:
+                case Resource.Id.race_result_fragment:
                     proceed = true;
                     break;
-
+                
                 default:
                     break;
             }
@@ -262,8 +266,9 @@ namespace com.companyname.NavigationGraph6
 
             // By default because the LeaderboardPagerFragment and the RegisterFragment are not top level fragments, they will default to showing a up button (left arrow) plus the title.
             // If you don't want the up button, remove it here. This also means that the additional code in OnSupportNavigationUp can be removed. 
-            if (navDestination.Id == Resource.Id.leaderboardpager_fragment || navDestination.Id == Resource.Id.register_fragment)
+            if (navDestination.Id == Resource.Id.leaderboardpager_fragment || navDestination.Id == Resource.Id.register_fragment || navDestination.Id == Resource.Id.race_result_fragment)
             {
+                AndroidX.AppCompat.Widget.Toolbar toolbar = FindViewById<AndroidX.AppCompat.Widget.Toolbar>(Resource.Id.toolbar);
                 toolbar.Title = navDestination.Label;
                 toolbar.NavigationIcon = null;
             }
@@ -299,14 +304,14 @@ namespace com.companyname.NavigationGraph6
         {
             // Check if anything has been changed in the Settings Fragment before re-reading and updating the preference variables
             sharedPreferences = PreferenceManager.GetDefaultSharedPreferences(this);
-            devicesWithNotchesAllowFullScreen = sharedPreferences.GetBoolean("devicesWithNotchesAllowFullScreen", false);
+            devicesWithNotchesAllowFullScreen = sharedPreferences.GetBoolean("devicesWithNotchesAllowFullScreen", true);
             animateFragments = sharedPreferences.GetBoolean("use_animations", false);
         }
         #endregion
 
-        #region !! Methods only called by ImmersiveFragment
-        //public void DisableDrawerLayout() => drawerLayout.SetDrawerLockMode(DrawerLayout.LockModeLockedClosed);
-        //public void EnableDrawerLayout() => drawerLayout.SetDrawerLockMode(DrawerLayout.LockModeUnlocked);
+        #region !! Methods only called by ImmersiveFragment if using
+        public void DisableDrawerLayout() => drawerLayout.SetDrawerLockMode(DrawerLayout.LockModeLockedClosed);
+        public void EnableDrawerLayout() => drawerLayout.SetDrawerLockMode(DrawerLayout.LockModeUnlocked);
         #endregion
 
         // code removed from the MainActivity as compared to NavigationGraph5

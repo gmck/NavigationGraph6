@@ -29,7 +29,6 @@ namespace com.companyname.NavigationGraph6
 
         public override void HandleOnBackPressed()
         {
-
             if (!animateFragments)
                 AnimationResource.Fader2();
             else
@@ -55,6 +54,8 @@ namespace com.companyname.NavigationGraph6
                 leaderboardPagerFragment.HandleBackPressed(navOptions);
             else if (fragment is RegisterFragment registerFragment)
                 registerFragment.HandleBackPressed(navOptions);
+            else if (fragment is RaceResultFragment raceResultFragment)
+                raceResultFragment.HandleBackPressed(navOptions);
         }
     } 
 }
