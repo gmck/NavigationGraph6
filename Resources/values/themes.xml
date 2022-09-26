@@ -38,7 +38,7 @@
 		<item name="android:colorBackground">@color/white</item>
 		
 		<!-- Status bar color. -->
-		<item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
+		<!--<item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>-->
 
 		<!-- NavigationBar-->
 		<item name="android:windowLightNavigationBar">true</item>
@@ -86,7 +86,7 @@
 		<item name="android:colorBackground">@color/white</item>
 
 		<!--Status bar color.-->
-		<item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
+		<!--<item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>-->
 
 		<!-- NavigationBar-->
 		<item name="android:windowLightNavigationBar">true</item>
@@ -136,7 +136,7 @@
 		<item name="android:colorBackground">@color/white</item>
 
 		<!-- Status bar color. -->
-		<item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
+		<!--<item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>-->
 
 		<!-- NavigationBar-->
 		<item name="android:windowLightNavigationBar">true</item>

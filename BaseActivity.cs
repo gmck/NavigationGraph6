@@ -1,7 +1,11 @@
 ﻿using Android.App;
 using Android.Content;
+using Android.Graphics;
 using Android.OS;
+using Android.Util;
 using AndroidX.AppCompat.App;
+using AndroidX.Core.Content;
+using AndroidX.Core.View;
 using AndroidX.Preference;
 
 namespace com.companyname.NavigationGraph6
@@ -16,6 +20,12 @@ namespace com.companyname.NavigationGraph6
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
+
+            // Sets whether the decor view should fit root-level content views for WindowInsetsCompat.
+            // In other words - 
+            // The single argument controls whether or not our layout will fit inside the system windows (if true), or be draw behind them (if false). 
+            WindowCompat.SetDecorFitsSystemWindows(Window, false);
+
             sharedPreferences = PreferenceManager.GetDefaultSharedPreferences(this);
             // colorThemeValue defaults to RedBmw
             requestedColorTheme = sharedPreferences.GetString("colorThemeValue", "1");
@@ -32,6 +42,11 @@ namespace com.companyname.NavigationGraph6
                 SetTheme(Resource.Style.Theme_NavigationGraph_BlueAudi);
             else if (requestedColorTheme == "3")
                 SetTheme(Resource.Style.Theme_NavigationGraph_GreenBmw);
+
+            TypedValue typedValue = new TypedValue();
+            Theme.ResolveAttribute(Resource.Attribute.colorPrimaryVariant, typedValue, true);
+            int color = ContextCompat.GetColor(this, typedValue.ResourceId);
+            Window.SetStatusBarColor(new Color(color));
         }
         #endregion
     }

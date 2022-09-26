@@ -48,6 +48,5 @@
 		android:name="com.companyname.navigationgraph6.fragments.RaceResultFragment"
 		android:label="Race Result"
         tools:layout="@layout/fragment_race_result"/>
-
 </navigation>
 

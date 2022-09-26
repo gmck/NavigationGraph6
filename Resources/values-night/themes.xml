@@ -39,7 +39,7 @@
 		
 		<!-- Status bar color. -->
 		<!-- Gmail does this -->
-		<item name="android:statusBarColor" tools:targetApi="l">@color/black</item>
+		<!--<item name="android:statusBarColor" tools:targetApi="l">@color/black</item>-->
 		
 		<!-- NavigationBar-->
 		<item name="android:windowLightNavigationBar">false</item>
@@ -87,7 +87,7 @@
 
 		<!-- Status bar color. -->
 		<!-- Gmail does this -->
-		<item name="android:statusBarColor" tools:targetApi="l">@color/black</item>
+		<!--<item name="android:statusBarColor" tools:targetApi="l">@color/black</item>-->
 		
 		<!-- NavigationBar-->
 		<item name="android:windowLightNavigationBar">false</item>
@@ -137,7 +137,7 @@
 
 		<!-- Status bar color. -->
 		<!-- Gmail does this -->
-		<item name="android:statusBarColor" tools:targetApi="l">@color/black</item>
+		<!--<item name="android:statusBarColor" tools:targetApi="l">@color/black</item>-->
 		
 		<!-- NavigationBar-->
 		<item name="android:windowLightNavigationBar">false</item>

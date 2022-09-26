@@ -45,10 +45,10 @@ namespace com.companyname.NavigationGraph6
 
             // This rather than android:windowTranslucentStatus in styles seems to have fixed the problem with the OK button on the BasicDialogFragment
             // It also fixes the AppBarlayout so it extends full screen, when devicesWithNotchesAllowFullScreen = true; 
-            Window.AddFlags(WindowManagerFlags.TranslucentStatus);
+            //Window.AddFlags(WindowManagerFlags.TranslucentStatus);
 
             // Require a toolbar
-            AndroidX.AppCompat.Widget.Toolbar toolbar = FindViewById<AndroidX.AppCompat.Widget.Toolbar>(Resource.Id.toolbar);
+            Google.Android.Material.AppBar.MaterialToolbar toolbar = FindViewById<Google.Android.Material.AppBar.MaterialToolbar>(Resource.Id.toolbar);
             SetSupportActionBar(toolbar);
             ViewCompat.SetOnApplyWindowInsetsListener(toolbar, this);
 
@@ -116,7 +116,7 @@ namespace com.companyname.NavigationGraph6
             // both portraint and landscape - a terrible look). The debugger now will break at the following line. 
             #endregion
 
-            if (v is AndroidX.AppCompat.Widget.Toolbar)
+            if (v is Google.Android.Material.AppBar.MaterialToolbar)
             {
                 AndroidX.Core.Graphics.Insets statusBarsInsets = insets.GetInsets(WindowInsetsCompat.Type.StatusBars());
 

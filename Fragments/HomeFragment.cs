@@ -1,7 +1,7 @@
 ﻿using Android.Content;
 using Android.OS;
 using Android.Views;
-using Android.Widget; 
+using Android.Widget;
 using AndroidX.Core.View;
 using AndroidX.Fragment.App;
 using AndroidX.Navigation;
@@ -63,7 +63,6 @@ namespace com.companyname.NavigationGraph6.Fragments
 
             // More concise than the above 
             // (RequireActivity() as IMenuHost).AddMenuProvider(this, ViewLifecycleOwner, AndroidX.Lifecycle.Lifecycle.State.Resumed);
-            
         }
         #endregion
 
@@ -168,6 +167,4 @@ namespace com.companyname.NavigationGraph6.Fragments
         }
         #endregion
     }
-
-
 }
