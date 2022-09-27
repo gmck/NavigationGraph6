@@ -113,7 +113,7 @@ namespace com.companyname.NavigationGraph6
             #region Notes
             // Using a Pixel3a, which doesn't have a notch. Took some time to figure this out. The debugger was not breaking here when first starting the app or even on screen rotation even when simulating a display 
             // cutout. However once you add <item name="android:windowLayoutInDisplayCutoutMode">shortEdges</item> to your theme, which changes the default setting of LayoutInDisplayCutoutMode.Default (letter box 
-            // both portraint and landscape - a terrible look). The debugger now will break at the following line. 
+            // both portrait and landscape - a terrible look). The debugger now will break at the following line. 
             #endregion
 
             if (v is Google.Android.Material.AppBar.MaterialToolbar)

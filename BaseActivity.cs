@@ -23,7 +23,7 @@ namespace com.companyname.NavigationGraph6
 
             // Sets whether the decor view should fit root-level content views for WindowInsetsCompat.
             // In other words - 
-            // The single argument controls whether or not our layout will fit inside the system windows (if true), or be draw behind them (if false). 
+            // The single argument controls whether or not our layout will fit inside the system windows (if true), or be drawn behind them (if false). 
             WindowCompat.SetDecorFitsSystemWindows(Window, false);
 
             sharedPreferences = PreferenceManager.GetDefaultSharedPreferences(this);
