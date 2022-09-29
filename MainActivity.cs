@@ -29,7 +29,7 @@ namespace com.companyname.NavigationGraph6
         // Preference variables - see OnDestinationChanged where they are checked
         private bool devicesWithNotchesAllowFullScreen;             // allow full screen for devices with notches
         private bool animateFragments;                              // animate fragments 
-
+        
         #region OnCreate
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -42,10 +42,6 @@ namespace com.companyname.NavigationGraph6
 
             // Set our view from the "main" layout resource
             SetContentView(Resource.Layout.activity_main);
-
-            // This rather than android:windowTranslucentStatus in styles seems to have fixed the problem with the OK button on the BasicDialogFragment
-            // It also fixes the AppBarlayout so it extends full screen, when devicesWithNotchesAllowFullScreen = true; 
-            //Window.AddFlags(WindowManagerFlags.TranslucentStatus);
 
             // Require a toolbar
             Google.Android.Material.AppBar.MaterialToolbar toolbar = FindViewById<Google.Android.Material.AppBar.MaterialToolbar>(Resource.Id.toolbar);
@@ -61,7 +57,6 @@ namespace com.companyname.NavigationGraph6
             NavHostFragment navHostFragment = SupportFragmentManager.FindFragmentById(Resource.Id.nav_host) as NavHostFragment;
             navController = navHostFragment.NavController;
 
-            
             // These are the fragments that you don't wont the back button of the toolbar to display on e.g. topLevel fragments. They correspond to the items of the NavigationView.
             int[] topLevelDestinationIds = new int[] { Resource.Id.home_fragment, Resource.Id.gallery_fragment, Resource.Id.slideshow_fragment };
             appBarConfiguration = new AppBarConfiguration.Builder(topLevelDestinationIds).SetOpenableLayout(drawerLayout).Build();  // SetDrawerLayout replaced with SetOpenableLayout
@@ -80,7 +75,6 @@ namespace com.companyname.NavigationGraph6
             // Upgrading to Navigation.Fragment and Navigation.UI version 2.4.2. Navigation.UI includes now Android.Material 1.5.0.2 - also tested 1.6.0
             navigationView.SetNavigationItemSelectedListener(this);
             bottomNavigationView.ItemSelected += BottomNavigationView_ItemSelected;     
-
 
             // Add the DestinationChanged listener
             navController.AddOnDestinationChangedListener(this);
@@ -142,8 +136,8 @@ namespace com.companyname.NavigationGraph6
             ViewGroup.MarginLayoutParams marginLayoutParams = (ViewGroup.MarginLayoutParams)v.LayoutParameters;
             marginLayoutParams.LeftMargin = insets.Left;
             marginLayoutParams.TopMargin = insets.Top;          // top is all we are concerned with
-            marginLayoutParams.RightMargin = insets.Right;
-            marginLayoutParams.BottomMargin = insets.Bottom;
+            marginLayoutParams.RightMargin = marginLayoutParams.RightMargin;
+            marginLayoutParams.BottomMargin = marginLayoutParams.BottomMargin;
             v.LayoutParameters = marginLayoutParams;
             v.RequestLayout();
         }

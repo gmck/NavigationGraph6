@@ -3,20 +3,20 @@
 
 	<!--RedBmw theme colors-->
 	<color name="red_700">#d32f2f</color>
-	<!--<color name="red_700_dark">#9a0007</color>-->
-	<color name="red_700_dark">#809a0007</color>
+	<color name="red_700_dark">#9a0007</color>
+	<!--<color name="red_700_dark">#809a0007</color>-->
 	<color name="red_700_light">#ff6659</color>
 
 	<!--BlueAudi theme colors -->
 	<color name="blue_700">#0070d0</color>
-	<!--<color name="blue_700_dark">#004690</color>-->
-	<color name="blue_700_dark">#80004690</color>
+	<color name="blue_700_dark">#004690</color>
+	<!--<color name="blue_700_dark">#80004690</color>-->
 	<color name="blue_700_light">#5d9eff</color>
 
 	<!--GreenBmw theme colors-->
 	<color name="green_700">#00b058</color>
-	<!--<color name="green_700_dark">#007f2c</color>-->
-	<color name="green_700_dark">#80007f2c</color>
+	<color name="green_700_dark">#007f2c</color>
+	<!--<color name="green_700_dark">#80007f2c</color>-->
 	<color name="green_700_light">#57e386</color>
 
 	<!--Non color theme specific colors-->

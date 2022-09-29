@@ -23,7 +23,7 @@ namespace com.companyname.NavigationGraph6.Fragments
         private bool displayPageIndicator;
         private bool useViewPagerAnimations;
         private NavFragmentOnBackPressedCallback onBackPressedCallback;
-        
+
         private ConstraintLayout leaderboardConstraintLayout;
         private int initialPaddingBottom;
 
@@ -38,7 +38,9 @@ namespace com.companyname.NavigationGraph6.Fragments
             leaderboardConstraintLayout = view.FindViewById<ConstraintLayout>(Resource.Id.leader_board_constraint);
             leaderboardViewPager = view.FindViewById<ViewPager2>(Resource.Id.holder_viewpager);
             leaderboardTabLayout = view.FindViewById<TabLayout>(Resource.Id.tablayout1);
-            
+
+            // Not needed if using Window.AddFlags(WindowManagerFlags.TranslucentStatus);
+            // Is needed if using WindowCompat.SetDecorFitsSystemWindows(Window, false);
             ViewCompat.SetOnApplyWindowInsetsListener(leaderboardConstraintLayout, this);
             initialPaddingBottom = leaderboardConstraintLayout.PaddingBottom;
 
@@ -93,10 +95,10 @@ namespace com.companyname.NavigationGraph6.Fragments
         #region OnApplyWindowInsets
         public WindowInsetsCompat OnApplyWindowInsets(View v, WindowInsetsCompat insets)
         {
-            if (v is ConstraintLayout) 
+            if (v is ConstraintLayout)
             {
                 AndroidX.Core.Graphics.Insets navigationBarsInsets = insets.GetInsets(WindowInsetsCompat.Type.NavigationBars());
-                v.SetPadding( v.PaddingLeft, v.PaddingTop, v.PaddingRight, initialPaddingBottom + navigationBarsInsets.Bottom);
+                v.SetPadding(v.PaddingLeft, v.PaddingTop, v.PaddingRight, initialPaddingBottom + navigationBarsInsets.Bottom);
             }
             return insets;
         }

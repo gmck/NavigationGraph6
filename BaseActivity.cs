@@ -3,6 +3,7 @@ using Android.Content;
 using Android.Graphics;
 using Android.OS;
 using Android.Util;
+using Android.Views;
 using AndroidX.AppCompat.App;
 using AndroidX.Core.Content;
 using AndroidX.Core.View;
@@ -24,7 +25,12 @@ namespace com.companyname.NavigationGraph6
             // Sets whether the decor view should fit root-level content views for WindowInsetsCompat.
             // In other words - 
             // The single argument controls whether or not our layout will fit inside the system windows (if true), or be drawn behind them (if false). 
-            WindowCompat.SetDecorFitsSystemWindows(Window, false);
+            //WindowCompat.SetDecorFitsSystemWindows(Window, false);
+
+            // This rather than android:windowTranslucentStatus in styles seems to have fixed the problem with the OK button on the BasicDialogFragment
+            // It also fixes the AppBarlayout so it extends full screen, when devicesWithNotchesAllowFullScreen = true; 
+            // Comment this out to see the result of the AppBarLayout
+            Window.AddFlags(WindowManagerFlags.TranslucentStatus);
 
             sharedPreferences = PreferenceManager.GetDefaultSharedPreferences(this);
             // colorThemeValue defaults to RedBmw
