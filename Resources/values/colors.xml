@@ -3,8 +3,8 @@
 
 	<!--RedBmw theme colors-->
 	<color name="red_700">#d32f2f</color>
-	<color name="red_700_dark">#9a0007</color>
-	<!--<color name="red_700_dark">#809a0007</color>-->
+	<!--<color name="red_700_dark">#9a0007</color>-->
+	<color name="red_700_dark">#809a0007</color>
 	<color name="red_700_light">#ff6659</color>
 
 	<!--BlueAudi theme colors -->

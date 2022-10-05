@@ -13,7 +13,7 @@ namespace com.companyname.NavigationGraph6.Fragments
         public override void OnStart()
         {
             base.OnStart();
-            //windowInsetsControllerCompat = new WindowInsetsControllerCompat(Activity.Window, Activity.Window.DecorView);
+            //windowInsetsControllerCompat = new WindowInsetsControllerCompat(Activity.Window, Activity.Window.DecorView); 
             windowInsetsControllerCompat = WindowCompat.GetInsetsController(Activity.Window, Activity.Window.DecorView);
         }
         #endregion
@@ -48,7 +48,7 @@ namespace com.companyname.NavigationGraph6.Fragments
                 mainActivity.DisableDrawerLayout();             // Disable the navigationDrawer of the MainActivity. We don't want a user to be able to swipe it into view while viewing any of the gauges
             }
 
-            //WindowCompat.SetDecorFitsSystemWindows(Activity.Window, false);
+            WindowCompat.SetDecorFitsSystemWindows(Activity.Window, false);
             windowInsetsControllerCompat.Hide(WindowInsetsCompat.Type.StatusBars() | WindowInsetsCompat.Type.NavigationBars());
             windowInsetsControllerCompat.SystemBarsBehavior = WindowInsetsControllerCompat.BehaviorShowTransientBarsBySwipe;
         }
@@ -57,12 +57,13 @@ namespace com.companyname.NavigationGraph6.Fragments
         #region ShowSystemUi
         private void ShowSystemUi()
         {
-            TypedValue typedValue = new TypedValue();
-            Activity.Theme.ResolveAttribute(Resource.Attribute.colorSurface, typedValue, true);
-            int color = ContextCompat.GetColor(Context, typedValue.ResourceId);
-            Activity.Window.DecorView.SetBackgroundColor(new Color(color));
+            //TypedValue typedValue = new TypedValue();
+            //Activity.Theme.ResolveAttribute(Resource.Attribute.colorSurface, typedValue, true);
+            //int color = ContextCompat.GetColor(Context, typedValue.ResourceId);
+            //Activity.Window.DecorView.SetBackgroundColor(new Color(color));
 
-            //WindowCompat.SetDecorFitsSystemWindows(Activity.Window, true);
+            // !!!! We have a flash here when closing
+            WindowCompat.SetDecorFitsSystemWindows(Activity.Window, true);
             windowInsetsControllerCompat.Show(WindowInsetsCompat.Type.StatusBars() | WindowInsetsCompat.Type.NavigationBars());
 
             if (Activity is MainActivity mainActivity)
