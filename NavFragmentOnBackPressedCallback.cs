@@ -1,4 +1,5 @@
 ﻿using Android.Content;
+using Android.Util;
 using AndroidX.Activity;
 using AndroidX.Fragment.App;
 using AndroidX.Navigation;
@@ -18,6 +19,8 @@ namespace com.companyname.NavigationGraph6
         private readonly Fragment fragment;
         private readonly bool animateFragments;
         private NavOptions navOptions;
+
+        private readonly string logTag = "navigationGraph6";
 
         public NavFragmentOnBackPressedCallback(Fragment fragment, bool enabled) : base(enabled)
         {
@@ -42,6 +45,10 @@ namespace com.companyname.NavigationGraph6
                     .SetPopExitAnim(AnimationResource.PopExitAnimation)
                     .Build();
 
+            Log.Debug(logTag, "Navigate back - Enter Animation " + navOptions.EnterAnim.ToString());
+            Log.Debug(logTag, "Navigate back - Exit Animation " + navOptions.ExitAnim.ToString());
+            Log.Debug(logTag, "Navigate back - Pop Enter Animation " + navOptions.PopEnterAnim.ToString());
+            Log.Debug(logTag, "Navigate back - Pop Exit Animation " + navOptions.PopExitAnim.ToString());
 
             // Mixture of top level and non top level fragments
             if (fragment is HomeFragment homeFragment)

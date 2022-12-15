@@ -1,14 +1,16 @@
 ﻿using Android.App;
 using Android.OS;
+using Android.Util;
 using Android.Views;
 using AndroidX.Core.View;
 using AndroidX.DrawerLayout.Widget;
 using AndroidX.Navigation;
 using AndroidX.Navigation.Fragment;
 using AndroidX.Navigation.UI;
-using AndroidX.Preference;
 using Google.Android.Material.BottomNavigation;
 using Google.Android.Material.Navigation;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace com.companyname.NavigationGraph6
 {
@@ -19,6 +21,7 @@ namespace com.companyname.NavigationGraph6
                                 NavigationBarView.IOnItemSelectedListener,
                                 NavigationView.IOnNavigationItemSelectedListener 
     {
+        private readonly string logTag = "navigationGraph6";
 
         private AppBarConfiguration appBarConfiguration;
         private NavigationView navigationView;
@@ -29,7 +32,9 @@ namespace com.companyname.NavigationGraph6
         // Preference variables - see OnDestinationChanged where they are checked
         private bool devicesWithNotchesAllowFullScreen;             // allow full screen for devices with notches
         private bool animateFragments;                              // animate fragments 
-        
+
+        private List<int> immersiveFragmentsDestinationIds;
+
         #region OnCreate
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -60,7 +65,10 @@ namespace com.companyname.NavigationGraph6
             // These are the fragments that you don't wont the back button of the toolbar to display on e.g. topLevel fragments. They correspond to the items of the NavigationView.
             int[] topLevelDestinationIds = new int[] { Resource.Id.home_fragment, Resource.Id.gallery_fragment, Resource.Id.slideshow_fragment };
             appBarConfiguration = new AppBarConfiguration.Builder(topLevelDestinationIds).SetOpenableLayout(drawerLayout).Build();  // SetDrawerLayout replaced with SetOpenableLayout
-
+            
+            // The following fragments are immersive fragments - see SetShortEdgesIfRequired
+            immersiveFragmentsDestinationIds = new List<int> { Resource.Id.race_result_fragment };
+            
             NavigationUI.SetupActionBarWithNavController(this, navController, appBarConfiguration);
 
             // Notes using both Navigation.Fragment and Navigation.UI version 2.3.5.3. Navigation.UI therefore includes Android.Material 1.4.0.4
@@ -216,6 +224,11 @@ namespace com.companyname.NavigationGraph6
                     .SetPopExitAnim(AnimationResource.PopExitAnimation)
                     .Build();
 
+            Log.Debug(logTag, "Navigate to - Enter Animation " + navOptions.EnterAnim.ToString());
+            Log.Debug(logTag, "Navigate to - Exit Animation " + navOptions.ExitAnim.ToString());
+            Log.Debug(logTag, "Navigate to - Pop Enter Animation " + navOptions.PopEnterAnim.ToString());
+            Log.Debug(logTag, "Navigate to - Pop Exit Animation " + navOptions.PopExitAnim.ToString());
+
             bool proceed = false;
 
             switch (e.Item.ItemId)
@@ -288,8 +301,10 @@ namespace com.companyname.NavigationGraph6
             // TODO: Make a note in our user Guide.
             #endregion
 
-            if (Build.VERSION.SdkInt >= BuildVersionCodes.P)
-                Window.Attributes.LayoutInDisplayCutoutMode = devicesWithNotchesAllowFullScreen ? LayoutInDisplayCutoutMode.ShortEdges : LayoutInDisplayCutoutMode.Default;
+            //if (Build.VERSION.SdkInt >= BuildVersionCodes.P)
+            //    Window.Attributes.LayoutInDisplayCutoutMode = devicesWithNotchesAllowFullScreen ? LayoutInDisplayCutoutMode.ShortEdges : LayoutInDisplayCutoutMode.Default;
+
+            SetShortEdgesIfRequired(navDestination);
         }
         #endregion
 
@@ -297,9 +312,26 @@ namespace com.companyname.NavigationGraph6
         private void CheckForPreferenceChanges()
         {
             // Check if anything has been changed in the Settings Fragment before re-reading and updating the preference variables
-            sharedPreferences = PreferenceManager.GetDefaultSharedPreferences(this);
             devicesWithNotchesAllowFullScreen = sharedPreferences.GetBoolean("devicesWithNotchesAllowFullScreen", true);
             animateFragments = sharedPreferences.GetBoolean("use_animations", false);
+
+            
+        }
+        #endregion
+
+        #region SetShortEdgesIfRequired
+        private void SetShortEdgesIfRequired(NavDestination navDestination)
+        {
+            // Note: LayoutInDisplayCutoutMode.ShortEdges could be set in HideSystemUi in the ImmersiveFragment if you didn't have this requirement. 
+
+            // For when we have more than one immersive fragment. Are they all going to displayed shortEdges or are only some screens (non immersive) going to be displayed ShortEdges.
+            // Still to be done - change wording of the deviceWithNotchesAllowFullScreen, which will mean all fragments other than the ImmersiveFragments - see immersiveFragmentsDestinationIds - only one in the project.
+            // Effectively it will be all fragments - or none, except all immersiveFragments will always be full screen because they will be in the List<int> immersiveFragmentDestinationIds. 
+            if (Build.VERSION.SdkInt >= BuildVersionCodes.P)
+            {
+                Window.Attributes.LayoutInDisplayCutoutMode = immersiveFragmentsDestinationIds.Contains<int>(navDestination.Id) | devicesWithNotchesAllowFullScreen ? LayoutInDisplayCutoutMode.ShortEdges : LayoutInDisplayCutoutMode.Default;
+                //Log.Debug(logTag, "SetShortEdgesIfRequired - LayoutInDisplayCutoutMode is " + Window.Attributes.LayoutInDisplayCutoutMode.ToString());
+            }
         }
         #endregion
 

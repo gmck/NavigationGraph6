@@ -13,7 +13,6 @@ namespace com.companyname.NavigationGraph6.Fragments
         public override void OnStart()
         {
             base.OnStart();
-            //windowInsetsControllerCompat = new WindowInsetsControllerCompat(Activity.Window, Activity.Window.DecorView); 
             windowInsetsControllerCompat = WindowCompat.GetInsetsController(Activity.Window, Activity.Window.DecorView);
         }
         #endregion
