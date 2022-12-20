@@ -94,6 +94,7 @@
     <Compile Include="SystemThemeListPreference.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Converting a Xamarin.Android app to .Net7.docx" />
     <None Include="NavigationGraph.docx" />
     <None Include="Resources\AboutResources.txt" />
     <None Include="Properties\AndroidManifest.xml" />
